@@ -1,0 +1,42 @@
+[tool.poetry]
+name = "sentry-api-python"
+version = "0.1.0"
+description = "SDK in Python to simplify access Sentry API (https://docs.sentry.io/api/)"
+authors = ["Daniel Ancuta <whisller@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/epsylabs/sentry-api-python"
+repository = "https://github.com/epsylabs/sentry-api-python"
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Environment :: Web Environment",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3 :: Only",
+]
+keywords = ["sentry", "sentry-api-sdk"]
+packages = [{include = "sentry_api_python"}]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+requests = "^2.28.2"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.1.0"
+isort = "^5.12.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 120
+
+[tool.isort]
+line_length = 120
