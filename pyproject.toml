@@ -8,7 +8,7 @@ readme = "README.md"
 homepage = "https://github.com/epsylabs/sentry-api-python"
 repository = "https://github.com/epsylabs/sentry-api-python"
 classifiers = [
-    "Development Status :: 5 - Production/Stable",
+    "Development Status :: 3 - Alpha",
     "Environment :: Console",
     "Environment :: Web Environment",
     "Intended Audience :: Developers",
