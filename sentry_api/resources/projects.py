@@ -1,3 +1,4 @@
+from sentry_api.exceptions import SentryApiConflictException
 from sentry_api.http import BaseHttp
 
 
@@ -33,3 +34,18 @@ class ProjectsResource:
         """
 
         return self.http_client.make_a_call("put", f"projects/{organization_slug}/{project_slug}/", project)
+
+    def upsert(self, organization_slug: str, project_slug: str, project: dict):
+        """
+        Creates new project if didn't exist and updates existing one.
+
+        If project didn't exist it also makes additional call to make sure all attributes passed in `project`
+        variable are sent to Sentry endpoint. Because
+        """
+        try:
+            self.create(organization_slug, project_slug, project)
+            response = self.update(organization_slug, project_slug, project)
+        except SentryApiConflictException:
+            response = self.update(organization_slug, project_slug, project)
+
+        return response
