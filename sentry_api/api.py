@@ -1,22 +1,23 @@
 from typing import Type
 
 from sentry_api.http import BaseHttp, RequestsHttp
-from sentry_api.resources import Projects, Teams
+from sentry_api.resources import ProjectRulesResource, ProjectsResource, TeamsResource
 
 
 class SentryApi:
     def __init__(
-            self,
-            token: str,
-            endpoint_url: str = "https://sentry.io/api/0/",
-            caller: Type[BaseHttp] = None
+        self, token: str, endpoint_url: str = "https://sentry.io/api/0/", http_client: Type[BaseHttp] = None
     ) -> None:
-        self.caller = caller(endpoint_url, token) if caller else RequestsHttp(endpoint_url, token)
+        self.http_client = http_client(endpoint_url, token) if http_client else RequestsHttp(endpoint_url, token)
 
     @property
-    def projects(self) -> Projects:
-        return Projects(self.caller)
+    def projects(self) -> ProjectsResource:
+        return ProjectsResource(self.http_client)
 
     @property
-    def teams(self) -> Teams:
-        return Teams(self.caller)
+    def project_rules(self) -> ProjectRulesResource:
+        return ProjectRulesResource(self.http_client)
+
+    @property
+    def teams(self) -> TeamsResource:
+        return TeamsResource(self.http_client)

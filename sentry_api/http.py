@@ -2,8 +2,13 @@ from urllib.parse import urljoin
 
 import requests
 
-from sentry_api.exceptions import SentryApiBadInputException, SentryApiForbiddenException, \
-    SentryApiResourceNotFoundException, SentryApiException, SentryApiConflictException
+from sentry_api.exceptions import (
+    SentryApiBadInputException,
+    SentryApiConflictException,
+    SentryApiException,
+    SentryApiForbiddenException,
+    SentryApiResourceNotFoundException,
+)
 
 
 class BaseHttp:
