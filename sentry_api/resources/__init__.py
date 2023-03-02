@@ -1,3 +1,3 @@
 from .projects import ProjectsResource
-from .rules import ProjectRulesResource
+from .project_rules import ProjectRulesResource
 from .teams import TeamsResource
