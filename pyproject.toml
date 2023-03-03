@@ -20,7 +20,7 @@ classifiers = [
     "Programming Language :: Python :: 3 :: Only",
 ]
 keywords = ["sentry", "sentry-api-sdk"]
-packages = [{include = "sentry_api_python"}]
+packages = [{include = "sentry_api"}]
 
 [tool.poetry.dependencies]
 python = "^3.8"

@@ -24,11 +24,10 @@ pip install sentry-api-python
 from sentry_api.api import SentryApi
 
 sentry_api = SentryApi(
+    organization_slug="my-org",
     token="<Your Auth Token https://docs.sentry.io/api/auth/>",
-    endpoint_url="https://sentry.io/api/0/",
 )
 response = sentry_api.projects.create(
-    organization_slug="my-org",
     team_slug="backend",
     project=dict(name="My first project")
 )
@@ -40,12 +39,12 @@ response = sentry_api.projects.create(
 from sentry_api.api import SentryApi
 
 sentry_api = SentryApi(
+    organization_slug="my-org",
     token="<Your Auth Token https://docs.sentry.io/api/auth/>",
     endpoint_url="https://sentry.io/api/0/",
 )
 
 response = sentry_api.project_rules.create(
-    organization_slug="my-org",
     project_slug="my-first-project",
     rule={
         "name": "Prod issues",
