@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "sentry-api-python"
-version = "0.1.0"
+version = "0.2.0"
 description = "SDK in Python to simplify access Sentry API (https://docs.sentry.io/api/)"
 authors = ["Daniel Ancuta <whisller@gmail.com>"]
 license = "MIT"
