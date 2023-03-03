@@ -1,3 +1,3 @@
-from .project_rules import ProjectRulesResource
-from .projects import ProjectsResource
-from .teams import TeamsResource
+from .project_rules import ProjectRulesResource  # noqa
+from .projects import ProjectsResource  # noqa
+from .teams import TeamsResource  # noqa

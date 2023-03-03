@@ -28,7 +28,7 @@ class ProjectsResource(BaseResource):
     def update(self, project_slug: str, project: dict):
         """
         Sentry API: https://docs.sentry.io/api/projects/update-a-project/
-        Sentry API Code: https://github.com/getsentry/sentry/blob/master/src/sentry/api/endpoints/project_details.py#L396
+        Sentry API Code: https://github.com/getsentry/sentry/blob/master/src/sentry/api/endpoints/project_details.py#L396  # noqa
         """
 
         return self.http_client.make_a_call("put", f"projects/{self.organization_slug}/{project_slug}/", project)

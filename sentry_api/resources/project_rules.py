@@ -16,10 +16,8 @@ class ProjectRulesResource(BaseResource):
 
     def update(self, project_slug: str, rule_id: int, rule: dict):
         """
-        Sentry API Code: https://github.com/getsentry/sentry/blob/master/src/sentry/api/endpoints/project_rule_details.py#L85
+        Sentry API Code: https://github.com/getsentry/sentry/blob/master/src/sentry/api/endpoints/project_rule_details.py#L85  # noqa
         """
         return self.http_client.make_a_call(
-            "put",
-            f"projects/{self.organization_slug}/{project_slug}/rules/{rule_id}/",
-            rule
+            "put", f"projects/{self.organization_slug}/{project_slug}/rules/{rule_id}/", rule
         )
