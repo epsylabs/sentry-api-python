@@ -1,19 +1,28 @@
 class SentryApiException(Exception):
-    def __init__(self, response=None):
+    def __init__(self, msg):
+        self.msg = msg
+
+
+class SentryApiHttpException(SentryApiException):
+    def __init__(self, response):
         self.response = response
 
 
-class SentryApiBadInputException(SentryApiException):
+class SentryApiBadInputException(SentryApiHttpException):
     ...
 
 
-class SentryApiForbiddenException(SentryApiException):
+class SentryApiForbiddenException(SentryApiHttpException):
     ...
 
 
-class SentryApiResourceNotFoundException(SentryApiException):
+class SentryApiResourceNotFoundException(SentryApiHttpException):
     ...
 
 
-class SentryApiConflictException(SentryApiException):
+class SentryApiConflictException(SentryApiHttpException):
+    ...
+
+
+class SentryApiNoTokenProvidedException(SentryApiException):
     ...

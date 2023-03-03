@@ -1,7 +1,7 @@
 import os
 from typing import Type
 
-from sentry_api.exceptions import SentryApiException
+from sentry_api.exceptions import SentryApiNoTokenProvidedException
 from sentry_api.http import BaseHttp, RequestsHttp
 from sentry_api.resources import ProjectRulesResource, ProjectsResource, TeamsResource
 
@@ -19,7 +19,7 @@ class SentryApi:
         token = token if token else os.environ.get("SENTRY_TOKEN")
 
         if not token:
-            raise SentryApiException("No token provided. Check https://docs.sentry.io/api/auth/")
+            raise SentryApiNoTokenProvidedException("No token provided. Check https://docs.sentry.io/api/auth/")
 
         self.http_client = http_client(endpoint_url, token) if http_client else RequestsHttp(endpoint_url, token)
 
