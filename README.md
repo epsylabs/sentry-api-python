@@ -1,6 +1,6 @@
 <h2 align="center">sentry-api-python</h2>
 <p align="center">
-<a href="https://pypi.org/project/sentry-api-python/"><img alt="PyPI" src="https://img.shields.io/pypi/v/sentry-api-pythonr"></a>
+<a href="https://pypi.org/project/sentry-api-python/"><img alt="PyPI" src="https://img.shields.io/pypi/v/sentry-api-python"></a>
 <a href="https://pypi.org/project/sentry-api-python/"><img alt="Python" src="https://img.shields.io/pypi/pyversions/sentry-api-python.svg"></a>
 <a href="https://github.com/epsylabs/sentry-api-python/blob/master/LICENSE"><img alt="License" src="https://img.shields.io/pypi/l/sentry-api-python.svg"></a>
 </p>
